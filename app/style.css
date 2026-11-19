@@ -1,0 +1,123 @@
+:root {
+  --ink: #1c1a26;
+  --ink-soft: #55506a;
+  --paper: #f7f4ee;
+  --card: #ffffff;
+  --line: #e3ddd0;
+  --sunset: #e8542f;
+  --sunset-soft: #fdeee7;
+  --violet: #4b2e83;
+  --violet-deep: #2c1a52;
+  --gold: #b8860b;
+  --ok: #1e7d4f;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.5;
+}
+.masthead {
+  background: linear-gradient(115deg, var(--violet-deep) 0%, var(--violet) 55%, var(--sunset) 130%);
+  color: #fff;
+  padding: 28px 20px 24px;
+}
+.masthead-inner { max-width: 1180px; margin: 0 auto; }
+.kicker { margin: 0 0 6px; text-transform: uppercase; letter-spacing: .14em; font-size: 12px; opacity: .85; }
+.masthead h1 { margin: 0 0 8px; font-size: 42px; line-height: 1.05; letter-spacing: -.01em; }
+.lede { margin: 0 0 18px; max-width: 720px; font-size: 17px; opacity: .94; }
+.progress-bar { height: 12px; background: rgba(255,255,255,.25); border-radius: 999px; overflow: hidden; max-width: 720px; }
+.progress-bar span { display: block; height: 100%; width: 0; background: #ffb03a; border-radius: 999px; transition: width .2s ease; }
+.progress-text { margin: 8px 0 0; font-size: 14px; opacity: .94; }
+main { max-width: 1180px; margin: 0 auto; padding: 20px 20px 8px; }
+section { margin-bottom: 26px; }
+h2 { font-size: 22px; margin: 0 0 10px; }
+.warn {
+  background: #fff4d6;
+  border: 1px solid #e8c96a;
+  border-left: 6px solid #d9a400;
+  border-radius: 10px;
+  padding: 14px 18px;
+}
+.warn h2 { font-size: 18px; margin-bottom: 4px; }
+.warn p { margin: 0; }
+.roadmap .stages { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.roadmap .stages li {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.roadmap .stages h3 { margin: 0 0 6px; font-size: 16px; }
+.roadmap .stages h3 span { color: var(--sunset); font-weight: 600; font-size: 13px; margin-left: 6px; }
+.roadmap .stages p { margin: 0 0 6px; font-size: 14px; }
+.stage-trophies { color: var(--ink-soft); font-size: 13px; }
+.roadmap-note { font-size: 13px; color: var(--ink-soft); }
+.controls {
+  display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center;
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px;
+}
+.controls input[type="search"] { padding: 7px 10px; border: 1px solid #cfc8b8; border-radius: 6px; font-size: 14px; width: 190px; }
+.controls select { padding: 7px 8px; border: 1px solid #cfc8b8; border-radius: 6px; font-size: 14px; background: #fff; }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.filters button, .io button {
+  padding: 7px 12px; border: 1px solid #cfc8b8; border-radius: 999px;
+  background: #fff; font-size: 13px; cursor: pointer; color: var(--ink);
+}
+.filters button.on { background: var(--violet); border-color: var(--violet); color: #fff; }
+.filters button:hover, .io button:hover { border-color: var(--violet); }
+.spoiler { font-size: 14px; display: flex; align-items: center; gap: 6px; }
+.io { display: flex; gap: 8px; align-items: center; margin-left: auto; }
+.import { font-size: 13px; border: 1px solid #cfc8b8; border-radius: 999px; padding: 7px 12px; cursor: pointer; background: #fff; }
+.import input { display: none; }
+.online-note { background: var(--sunset-soft); border: 1px solid #f0c4ae; border-radius: 8px; padding: 10px 14px; font-size: 14px; }
+.split { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 16px; margin-top: 14px; align-items: start; }
+.list-wrap { background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { border-bottom: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+thead th { background: #f2eee3; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-soft); }
+tbody tr { cursor: pointer; }
+tbody tr:hover { background: #faf7f0; }
+tbody tr.selected { background: var(--sunset-soft); }
+tbody tr.earned-row td.trophy-name { color: var(--ok); }
+td.trophy-name { font-weight: 600; }
+td .desc { display: block; font-weight: 400; color: var(--ink-soft); font-size: 13px; }
+.badge {
+  display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .05em; white-space: nowrap;
+}
+.badge.platinum { background: #e8f4ff; color: #0b5fa5; border: 1px solid #b7d8f0; }
+.badge.gold { background: #fff3c4; color: #7a5b00; border: 1px solid #e8d27a; }
+.badge.silver { background: #eef0f2; color: #4a5568; border: 1px solid #cbd5e0; }
+.badge.bronze { background: #fbeadd; color: #7b3f10; border: 1px solid #ecc9a8; }
+.kind { font-size: 12px; color: var(--ink-soft); text-transform: capitalize; }
+.flag-miss { color: #a33d00; font-weight: 700; font-size: 12px; }
+.flag-secret { color: var(--violet); font-weight: 700; font-size: 12px; }
+.detail {
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px;
+  position: sticky; top: 12px;
+}
+.detail h3 { margin: 0 0 4px; font-size: 20px; }
+.detail .official { color: var(--ink-soft); font-size: 14px; margin: 0 0 10px; }
+.detail .guide { font-size: 15px; margin: 0 0 12px; }
+.detail .flags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.detail .sources { border-top: 1px solid var(--line); padding-top: 10px; font-size: 13px; }
+.detail .sources h4 { margin: 0 0 4px; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-soft); }
+.detail .sources ul { margin: 0; padding-left: 18px; }
+.detail .sources a { color: var(--violet); }
+.detail-hint { color: var(--ink-soft); margin: 0; }
+.empty { padding: 16px; color: var(--ink-soft); }
+.sources ul { columns: 2; font-size: 14px; }
+.sources li { margin-bottom: 4px; }
+.sources a { color: var(--violet); }
+.sources-note { font-size: 13px; color: var(--ink-soft); }
+footer { max-width: 1180px; margin: 0 auto; padding: 0 20px 28px; font-size: 13px; color: var(--ink-soft); }
+@media (max-width: 900px) {
+  .roadmap .stages { grid-template-columns: 1fr; }
+  .split { grid-template-columns: 1fr; }
+  .detail { position: static; }
+  .masthead h1 { font-size: 32px; }
+  .sources ul { columns: 1; }
+}

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Guide — Grand Theft Auto VI (PS5)</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+    <h1>Leonida Trophy Guide</h1>
+    <p class="lede">Every trophy, in your own words, with its source — plus a tracker that remembers what you earned, a roadmap to the platinum, and a spoiler guard for the story.</p>
+    <div class="progress" id="progress" aria-label="Progress toward platinum">
+      <div class="progress-bar"><span id="progressFill"></span></div>
+      <p class="progress-text"><strong id="progressCount">0 of 55 earned</strong> &middot; <span id="progressByGrade"></span></p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="warn" id="missableWarn" aria-label="Missable trophy warning">
+    <h2>⚠ One trophy can be missed</h2>
+    <p><strong>Positive Mental Attitude</strong> (meditate at every spot) is the only trophy the launch guides flag as possibly missable: Lucia&rsquo;s balcony meditation in <strong>Chapter 1</strong> — after the mission <em>Down to Earth</em>, talk to Lucia in the kitchen in the morning, follow her to the balcony and choose <strong>Accept</strong>. After Chapter 1 that spot is gone, and there is no mission replay. Keep a manual save at the start of every chapter. Cheats switch trophies and saving off, so keep them off your trophy run.</p>
+  </section>
+
+  <section class="roadmap" id="roadmap" aria-label="Roadmap to the platinum">
+    <h2>Roadmap to the platinum — about 200 hours</h2>
+    <ol class="stages">
+      <li>
+        <h3>Stage 1 — Play the story <span>60–80 hours</span></h3>
+        <p>Chapters 1–5, in order. Chapter trophies and mission trophies pop as you play and cannot be missed. Do the Chapter 1 balcony meditation (see above), do stranger strands and side missions as they appear, and scan vehicles and study animals as you travel — 200 of 277 vehicles and 100 of 255 animals count toward 100%.</p>
+        <p class="stage-trophies">Earns: all 12 chapter &amp; mission trophies, the final-mission gold, and the five story-moment trophies.</p>
+      </li>
+      <li>
+        <h3>Stage 2 — The 100% checklist <span>about 100 hours</span></h3>
+        <p>After the credits, open <strong>Progress &gt; Stats &gt; 100% Completion</strong> (35 tasks) and work through what is left: every robbery, bank vault and gang operation, underwater discoveries, shooting ranges, drone races, Bret&rsquo;s Target Decks, and 70 of the 80 challenges. Everything you did before the credits already counts.</p>
+        <p class="stage-trophies">Earns: <strong>A Long Road</strong> (gold) and most of the activity and robbery trophies.</p>
+      </li>
+      <li>
+        <h3>Stage 3 — Strangers &amp; Freaks <span>about 10 hours</span></h3>
+        <p>Finish 8 stranger mission strands, and the final missions for Andy, Kenton, Billy, Randy and Tyrone, plus Bret&rsquo;s unique-animal hunt. None of these are part of 100%, but they are part of the platinum.</p>
+        <p class="stage-trophies">Earns: <strong>Strangers &amp; Freaks</strong> (silver) and the five character-final trophies.</p>
+      </li>
+      <li>
+        <h3>Stage 4 — Clean-up</h3>
+        <p>Finish the remaining challenges, launder $250,000 in Marked Bills, spend $100,000 in shops, buy all 8 garages and register 10 vehicles to the Scooter Bros app. When <strong>A Long Road</strong> pops, the platinum <strong>Vice Got a Price!</strong> follows at once.</p>
+        <p class="stage-trophies">Earns: the last handful — then the platinum.</p>
+      </li>
+    </ol>
+    <p class="roadmap-note">Roadmap built from the official trophy descriptions and the launch guides: PowerPyx, GTABase, Output Lag and KeenGamer (see Sources below). No online trophies, no difficulty trophies, one playthrough is enough.</p>
+  </section>
+
+  <section class="tracker" aria-label="Trophy tracker">
+    <div class="controls">
+      <label class="search">Search <input id="search" type="search" placeholder="Trophy name…" autocomplete="off"></label>
+      <div class="filters" role="group" aria-label="Filter by kind">
+        <button type="button" data-kind="all" class="on">All 55</button>
+        <button type="button" data-kind="story">Story</button>
+        <button type="button" data-kind="missable">Missable</button>
+        <button type="button" data-kind="collectibles">Collectibles</button>
+        <button type="button" data-kind="activities">Activities</button>
+        <button type="button" data-kind="online">Online</button>
+      </div>
+      <label class="grade">Grade
+        <select id="grade">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label class="spoiler"><input id="spoiler" type="checkbox"> Hide story spoilers</label>
+      <div class="io">
+        <button type="button" id="exportBtn">Export progress</button>
+        <label class="import">Import progress <input id="importFile" type="file" accept=".json,application/json"></label>
+        <button type="button" id="resetBtn">Reset</button>
+      </div>
+    </div>
+    <p class="online-note" id="onlineNote" hidden>No online trophies exist in GTA VI — every trophy is single-player. This filter is here so you can check that for yourself.</p>
+
+    <div class="split">
+      <div class="list-wrap">
+        <table>
+          <thead><tr><th scope="col">Earned</th><th scope="col">Trophy</th><th scope="col">Grade</th><th scope="col">Kind</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+        <p class="empty" id="empty" hidden>No trophies match this filter.</p>
+      </div>
+      <aside class="detail" id="detail" aria-label="Selected trophy guide">
+        <p class="detail-hint">Select a trophy to read its guide and sources.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="sources" aria-label="Sources">
+    <h2>Sources</h2>
+    <p>Official trophy names and descriptions are shown as PlayStation publishes them. Every guide is written in our own words; the sources below are where each fact comes from — a source is cited, never copied.</p>
+    <ul id="sourceList"></ul>
+    <p class="sources-note">Trophy list cross-checked on Exophase and PSNProfiles (via Planet GTA 6). Roadmap and unlock details: PowerPyx, GTABase, Output Lag, KeenGamer, GTAVibes. Five trophies (In The Beginning…, Capital Offense, Personal Best, Bad Luck, I Guess, The Truth Is Out There, Ten Pin) had no confirmed unlock method at launch — their guides say so honestly instead of guessing.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Leonida Trophy Guide — an unofficial fan-made tracker for Grand Theft Auto VI on PlayStation 5. Not affiliated with Rockstar Games. No Rockstar logo, artwork or game screenshot is used anywhere in this app.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
