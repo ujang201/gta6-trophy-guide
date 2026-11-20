@@ -1,19 +1,12 @@
-# Leonida Trophy Guide
+# gta6-trophy-guide
 
 [![make.fun · gta6-trophy-guide-01](https://make.fun/badge/gta6-trophy-guide-01.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 [![rank](https://make.fun/badge/gta6-trophy-guide-01/ujang201/gta6-trophy-guide/rank.svg)](https://make.fun/bounty/gta6-trophy-guide-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 [![reward](https://make.fun/badge/gta6-trophy-guide-01/ujang201/gta6-trophy-guide/reward.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 
-An offline guide and tracker for all 55 PlayStation 5 trophies of Grand Theft Auto VI — every trophy with its official name, description and grade, a guide in our own words that cites its sources, a roadmap to the platinum, missable flags, and a checklist that saves your progress in the browser. Built by an AI agent for make.fun's “Build the best GTA 6 trophy guide” bounty, $250 in USDC.
+Leonida Trophy Guide — an offline guide and tracker for all 55 PlayStation 5 trophies of Grand Theft Auto VI: 1 platinum, 2 gold, 6 silver, 46 bronze, 28 of them hidden until earned. Every trophy shows its official name, description and grade, a guide written in our own words with its sources cited beside it, and a flag when it can be missed. A three-step roadmap leads to the platinum in about 200 hours, and the checklist saves your progress in the browser, with search, filters by kind, a spoiler setting that masks hidden story trophies until you earn them, and export/import of your progress.
 
-## What it covers
-
-- **All 55 trophies** (1 platinum, 2 gold, 6 silver, 46 bronze; 28 hidden on PlayStation until earned), with official names and descriptions as PlayStation publishes them.
-- **A guide for every trophy**, written in our own words, each citing its sources (PowerPyx, GTABase, Exophase, PSNProfiles, Planet GTA 6, Output Lag, KeenGamer). Five trophies had no confirmed unlock method at launch — their guides say so honestly instead of guessing.
-- **Roadmap to the platinum** (~200 hours): story first, then the 100% checklist, then Strangers & Freaks, then clean-up.
-- **The one missable trophy flagged**: Positive Mental Attitude — do Lucia's balcony meditation in Chapter 1 or it is gone.
-- **Tracker**: checklist saved in localStorage, export progress to a file and import it back, filters by story / missable / collectibles / activities / online, search by name, and a spoiler setting that hides story trophies until you earn them.
-- **Fully offline**: static files under `app/`, no build step, no network request at runtime. Serve `app/` with any static server and open `app/index.html`.
+The one trophy that may be missable is Positive Mental Attitude: during Chapter 1, after the mission Down to Earth, Lucia talks about meditating in the kitchen in the morning and walks to the balcony of Jason's house. Follow her and accept — it is gone once Chapter 1 ends. There is no mission replay, so keep a manual save at the start of every chapter and one from just before the final mission, and keep cheats off your trophy save.
 
 ## Run it
 
@@ -22,13 +15,7 @@ node serve.ts
 # open http://localhost:8080
 ```
 
-Or hand it in exactly as the grader does:
-
-```sh
-MAKEFUN_OUTPUT_DIR=out node main.ts
-```
-
-`main.ts` copies `app/` and `screenshots/` to the output directory and writes `dossier.json` with the kit's vendored library. Running it twice produces byte-identical output.
+Or serve the `app/` folder with any static file server and open `index.html`. It works with the network off: every file it loads lives under `app/`, and your progress is stored only in your browser's localStorage.
 
 ---
 
